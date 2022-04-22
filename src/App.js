@@ -6,6 +6,7 @@ import Register from "./components/Login/Register/Register";
 import MyPosts from "./components/MyPosts/MyPosts";
 import Nav from './components/Nav/Nav';
 import ProtectedPage from "./components/ProtectedPage/ProtectedPage";
+import UpdatePost from "./components/UpdatePost/UpdatePost";
 function App() {
   return (
     <div >
@@ -21,6 +22,11 @@ function App() {
         <Route path="myposts" element={
           <ProtectedPage>
             <MyPosts></MyPosts>
+          </ProtectedPage>
+        } />
+        <Route path="updatepost/:id" element={
+          <ProtectedPage>
+            <UpdatePost></UpdatePost>
           </ProtectedPage>
         } />
       </Routes>
