@@ -1,9 +1,11 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase/firebase.init";
 
 const CreatePost = () => {
     const [user, loading] = useAuthState(auth);
+    const navigate = useNavigate()
     if (loading) {
         return (
             <div className='text-center text-black'>
@@ -30,6 +32,7 @@ const CreatePost = () => {
             .then(response => response.json())
             .then(data => {
                 toast.success('You have successfully posted')
+                navigate('/')
             })
     }
     return (

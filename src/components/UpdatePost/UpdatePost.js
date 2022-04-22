@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import auth from "../../firebase/firebase.init";
 
 const UpdatePost = () => {
     const [user, loading] = useAuthState(auth);
     const [post, setPost] = useState([])
+    const navigate = useNavigate()
     const {id} = useParams()
     useEffect(() => {
         fetch(`http://localhost:5000/post/${id}`)
@@ -40,6 +41,7 @@ const UpdatePost = () => {
             .then(response => response.json())
             .then(data => {
                 toast.success('You have successfully Updated your Post')
+                navigate('/myposts')
             })
     }
     return (

@@ -1,7 +1,7 @@
 
 import { ExternalLinkIcon, } from '@heroicons/react/solid'
 import { Link } from 'react-router-dom'
-import logo from '../../../assests/images/small-logo.png'
+import logo from '../../../assets/images/logo.png'
 
 import auth from '../../../firebase/firebase.init'
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth'

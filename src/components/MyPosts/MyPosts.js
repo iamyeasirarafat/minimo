@@ -13,7 +13,6 @@ const MyPosts = () => {
             .then((response) => response.json())
             .then(data => setPosts(data))
     }, [])
-    console.log(posts);
 
     if (loading) {
         return (
