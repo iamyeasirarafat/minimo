@@ -1,4 +1,5 @@
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
 import auth from "../../firebase/firebase.init";
 
 const CreatePost = () => {
@@ -26,7 +27,9 @@ const CreatePost = () => {
             body: JSON.stringify(post)
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                toast.success('You have successfully posted')
+            })
     }
     return (
         <>
