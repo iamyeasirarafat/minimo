@@ -25,7 +25,7 @@ const Login = () => {
   if (user) {
     toast.success('Logged In successful', { id: 'loginSuccess' })
     // navigate(from, { replace: true });
-    console.log(user);
+
   }
   if (loading) {
     toast.success('Please Wait', { id: 'loginLoading' })

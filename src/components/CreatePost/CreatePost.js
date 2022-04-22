@@ -17,8 +17,9 @@ const CreatePost = () => {
         const details = event.target.details.value;
         const img = event.target.img.value;
         const authorId = user.uid;
-        const post = { authorId: authorId, title: title, details: details, img: img };
-        console.log(post);
+        const author = user.displayName;
+        const post = { author: author, authorId: authorId, title: title, details: details, img: img };
+
         fetch('http://localhost:5000/', {
             method: 'POST',
             headers: {
