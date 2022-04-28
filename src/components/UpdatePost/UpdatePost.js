@@ -8,13 +8,13 @@ const UpdatePost = () => {
     const [user, loading] = useAuthState(auth);
     const [post, setPost] = useState([])
     const navigate = useNavigate()
-    const {id} = useParams()
+    const { id } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:5000/post/${id}`)
-        .then(response => response.json())
-        .then(data =>setPost(data))
-    },[])
-    const {title} = post
+        fetch(`https://limitless-earth-66395.herokuapp.com/post/${id}`)
+            .then(response => response.json())
+            .then(data => setPost(data))
+    }, [])
+    const { title } = post
     if (loading) {
         return (
             <div className='text-center text-black'>
@@ -31,7 +31,7 @@ const UpdatePost = () => {
         const author = user.displayName;
         const post = { author: author, authorId: authorId, title: title, details: details, img: img };
 
-        fetch(`http://localhost:5000/${id}`, {
+        fetch(`https://limitless-earth-66395.herokuapp.com/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

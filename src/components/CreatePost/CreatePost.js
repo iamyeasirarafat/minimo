@@ -22,7 +22,7 @@ const CreatePost = () => {
         const author = user.displayName;
         const post = { author: author, authorId: authorId, title: title, details: details, img: img };
 
-        fetch('http://localhost:5000/', {
+        fetch('https://limitless-earth-66395.herokuapp.com/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

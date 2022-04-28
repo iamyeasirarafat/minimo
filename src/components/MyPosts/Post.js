@@ -7,7 +7,7 @@ const Post = ({ post }) => {
     const { _id, author, title, img, details } = post;
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/${id}`, {
+        fetch(`https://limitless-earth-66395.herokuapp.com/${id}`, {
             method: 'DELETE',
         })
         .then(response => response.json())

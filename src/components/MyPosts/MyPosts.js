@@ -7,7 +7,7 @@ const MyPosts = () => {
     const [user, loading] = useAuthState(auth);
     const [posts, setPosts] = useState([])
     const id = user.uid;
-    const url = `http://localhost:5000/${id}`
+    const url = `https://limitless-earth-66395.herokuapp.com/${id}`
     useEffect(() => {
         fetch(url)
             .then((response) => response.json())
